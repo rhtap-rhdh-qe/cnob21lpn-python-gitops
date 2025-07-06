@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cnob21lpn-python-gitops
+  description: This is GitOps manifest for cnob21lpn-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=cnob21lpn-python
+    backstage.io/kubernetes-id: cnob21lpn-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: cnob21lpn-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cnob21lpn-python
